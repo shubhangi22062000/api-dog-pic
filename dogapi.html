@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>fetch api internally</title>
+    </head>
+    <link rel="stylesheet" href="dogapi.css">
+    <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <body class="bg">
+       
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+<!--
+      <ul>
+      <li class="nav-item">
+        <a class="nav-link disabled my-2 my-sm-0 " href="#">wanna add ur pet ? click here</a>
+      </li>
+      </ul>
+-->
+      <form class="form-inline my-2 my-lg-0">
+      
+      <button class="btn btn-danger my-2 my-sm-0"  type="submit" >ADD</button>
+          
+    </form>
+  </nav>
+
+    <div class="container"><h2>Open Source For Dog Pictures !</h2></div>
+        
+    
+        
+            <div id="dog_pic" class="picture border border-dark ">
+<!--        <center><p>pic here</p></center>--><img src="" id="pic" width="100%" height="100%">
+            
+        </div>
+        
+        </div>
+        </br>
+        <div>
+        <button id="dog_btn" class="btn btn-primary btn-lg my-2 my-sm-0 button " >click here to see more !</button>
+        </div>
+        
+        
+        
+        
+        <script>
+        const dog_pic = document.getElementById('dog_pic');
+        const dog_btn = document.getElementById('dog_btn');
+            const pic = document.getElementById('pic');
+            
+           
+            dog_btn.addEventListener("click",catchpic);
+    async function catchpic(){
+       const response = await fetch('https://dog.ceo/api/breeds/image/random');
+    const data= await response.json();
+        console.log(data.message);
+        console.log(data.status);
+          pic.setAttribute("src", data.message);                
+    }
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,22 @@
+.picture{
+    height:70%;
+        width:80%;
+    background-color: white;
+    border: 5px;
+    border-radius: 5%;   
+    margin-left: 100px;
+    margin-top: 50px;
+    align-content: center;
+}
+.bg{
+    background:  #95B9C7;
+}
+.button{
+    margin-left: 400px;
+    margin-top: 40px;
+}
+div>h2{
+    margin-top: 20px;
+    margin-left: 180px;
+}
+
